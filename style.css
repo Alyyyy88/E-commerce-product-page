@@ -16,19 +16,26 @@
   --Black-lightbox: hsl(0, 0%, 0%);
 }
 
+
 body{
   height: 100vh;
   font-family: 'Kumbh Sans';
 }
 
+.wrapper{
+  max-width: 1120px;
+  min-height: 100vh;
+  padding: 0 5px;
+  margin: auto;
+}
+
 nav .con_nav{
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  border: 2px solid black;
-  margin-bottom: 12px;
+  border-bottom: 1px solid var(--Grayish-blue);
+  margin-bottom: 85px;
 }
 
 .list_con{
@@ -51,6 +58,7 @@ nav .con_nav{
   list-style: none;
   font-size: 18px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .details_con{
@@ -62,13 +70,17 @@ nav .con_nav{
 
 .profile img{
   width: 45px;
+  cursor: pointer;
+}
+.cart_icon{
+  cursor: pointer;
 }
 
 .conatiner{
   padding: 2rem;
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .product_img_con{
@@ -76,7 +88,7 @@ nav .con_nav{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem;
+  /* padding: rem; */
   gap: 2rem;
 }
 
@@ -101,7 +113,7 @@ nav .con_nav{
 }
 
 .product_details_con{
-  padding: 8rem 2rem;
+  padding: 2rem ;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -116,7 +128,7 @@ nav .con_nav{
 }
 
 .product_name{
-  font-size: 56px;
+  font-size: 50px;
   font-weight: bold;
   color: var(--Very-darkblue);
   margin-bottom: 12px;
@@ -124,16 +136,14 @@ nav .con_nav{
 
 .product_desc{
   color: var(--Dark-grayish-blue);
-  line-height: 1.7;
-  font-size: 20px;
+  line-height: 1.5;
+  font-size: 18px;
   margin-top: 12px;
 }
 
 .price_con{
   display: flex;
   align-items: center;
-  /* background-color: red; */
-  /* padding: 12px; */
   gap: 16px;
   margin-top: 16px;
 }
@@ -163,11 +173,8 @@ nav .con_nav{
 
 .btns_con{
   width: 100%;
-  /* background-color: blue; */
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
-  /* padding: 20px; */
   gap: 1rem;
   margin-top: 24px;
 }
@@ -179,13 +186,12 @@ nav .con_nav{
   /* background-color: red; */
   background-color: var(--Light-grayish-blue);
   gap: 16px;
-  width: 25%;
+  width: 30%;
   padding: 12px;
   border-radius: 12px;
 }
 
 .inc_con , .dec_con{
-  /* background-color: aqua; */
   display: flex;
   padding: 12px;
   justify-content: center;
@@ -197,7 +203,7 @@ nav .con_nav{
   background-color: var(--Orange-primary);
   padding: 20px 30px;
   border-radius: 12px;
-  width: 45%;
+  width: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,10 +211,12 @@ nav .con_nav{
   color: var(--Very-darkblue);
   cursor: pointer;
   font-weight: bold ;
+  
 }
 .add_btn svg{
   fill: var(--Very-darkblue);
 }
+
 
 
 
