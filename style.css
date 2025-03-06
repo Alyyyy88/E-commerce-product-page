@@ -20,6 +20,8 @@
 body{
   height: 100vh;
   font-family: 'Kumbh Sans';
+  position: relative;
+  background-color: hsl(223, 64%, 98%);
 }
 
 .wrapper{
@@ -66,14 +68,35 @@ nav .con_nav{
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  position: relative;
+
 }
 
 .profile img{
   width: 45px;
   cursor: pointer;
 }
+.profile img:hover{
+  border:2.5px solid var(--Orange-primary);
+  border-radius: 50%;
+}
+
 .cart_icon{
   cursor: pointer;
+}
+
+.counter_icon_con{
+  background-color: var(--Orange-primary);
+  width: 15px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  border-radius:60%;
+  color: white;
+  position: relative;
+ top: -20px;
+ right: 125px;
+ transform: translate(50% , 50%);
 }
 
 .conatiner{
@@ -97,6 +120,7 @@ nav .con_nav{
   width: 420px;
   border-radius: 16px;
 }
+
 
 .proudct_grid_imgs{
   width: 100%;
@@ -231,30 +255,70 @@ nav .con_nav{
   fill: #e99454;
 }
 
-/* .cart_con{
+.cart_con{
   box-shadow: -1px 4px 17px 0px rgba(0,0,0,0.75);
-  max-width: 620px;
+  max-width: 370px;
   width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 30px;
+  position: absolute;
+  top: 85px;
+  right: 180px;
+  background-color: hsl(223, 64%, 98%);
+  display: none;
+}
+.cart_con.active{
+  display: flex;
+}
+
+.product_cart_desc{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 20px;
+}
+
+.product_desc{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 12px;
-  padding: 20px;
 }
-
-.item{
+.price_con_cart{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
 }
 
+.total_p{
+  color: var(--Very-darkblue);
+  font-weight: 700;
+}
 
-.product_img_cart{
-  width:70px;
-  height: 70px;
-} */
+.remove_con{
+  cursor: pointer;
+}
 
+.img_con img{
+  width: 60px;
+}
+.name_con p{
+  font-size: 16px;
+}
 
+.place_order_btn{
+  width: 100%;
+  align-self: center;
+  outline: none;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--Orange-primary);
+  color: var(--Very-darkblue);
+  font-weight: 700;
+  cursor: pointer;
+}
 
 
 
