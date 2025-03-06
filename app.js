@@ -17,28 +17,20 @@ const emptyCart = document.querySelector(".empty_cart");
 const incBtn = document.querySelector(".inc_con");
 const decBtn = document.querySelector(".dec_con");
 const quantityCtr = document.querySelector(".counter");
+const cartCounter =document.querySelector(".counter_icon");
 
 
 
-let counter = 0
 
-const increase = ()=>{
-  counter++;
-  quantityCtr.textContent = counter;
+
+
+
+const updateQuantity = ()=>{
+ const cartSpan = document.querySelector(".counter_cart");
+ if(cartSpan){
+   cartSpan.textContent = `X${counter}`;
+ }
 };
-
-const decrease = ()=>{
-  
-  if(counter < 1){
-    decBtn.dsiabled = true;
-  }
-  else{
-    counter--;
-    quantityCtr.textContent = counter;
-  }
-};
-
-console.log(counter);
 
 
 
@@ -57,8 +49,8 @@ const productHtml = `<div class="product_cart_desc">
         <p>
           $125
         </p>
-        <span class="counter">
-          x ${counter}
+        <span class="counter_cart">
+          X 1
         </span>
         <p class="total_p">
           $375
@@ -77,21 +69,64 @@ const productHtml = `<div class="product_cart_desc">
       <button class="place_order_btn">Checkout</button>`;
 
 
-
+      let counter = 0;
 
 const addToCart = ()=>{
   emptyCart.classList.add("nonactive");
+  counter = 1;
+  quantityCtr.textContent = counter;
+  cartCounter.textContent = counter;
+
+
+  const increase = ()=>{
+    counter++;
+    quantityCtr.textContent = counter;
+    updateQuantity();
+    cartCounter.textContent = counter;
+
+  };
+
+  const decrease = ()=>{
+    if(counter > 1){
+      counter--;
+      quantityCtr.textContent = counter;
+      updateQuantity();
+      cartCounter.textContent = counter;
+      console.log(counter);
+
+    }
+    else{
+      removeItem();
+    
+    }
+    
+  };
+
+
+
 
   if(cartCon.querySelector(".product_cart_desc")){
-    document.querySelector(".add_btn").dsiabled = true;
+    document.querySelector(".add_btn").disabled = true;
     return;
   }
-  cartCon.insertAdjacentHTML("beforeend" , productHtml);
+  else{
+    cartCon.insertAdjacentHTML("beforeend" , productHtml);
+
+  }
+
   document.querySelector(".remove_con").addEventListener("click",()=>{
     document.querySelector(".product_cart_desc").remove();
     document.querySelector(".place_order_btn").remove();
     emptyCart.classList.remove("nonactive");
+    counter = 0;
+    updateQuantity();
   });
+  
+
+
+  incBtn.addEventListener("click",increase);
+decBtn.addEventListener("click",decrease);
+ 
 
 };
 
@@ -107,8 +142,7 @@ const showCart = ()=>{
 
 cart.addEventListener("click",showCart);
 addBtn.addEventListener("click",addToCart);
-incBtn.addEventListener("click",increase);
-decBtn.addEventListener("click",decrease);
+
 
 
 
